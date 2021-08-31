@@ -9,9 +9,10 @@ struct dsu
          for (int i = 1; i <= n; i++) root[i] = i;
       }
 
-      int find(int u) 
+      int find(int u){
          return (root[u] == u ? u : root[u] = find(root[u])) ; 
-
+      }
+         
       bool same(int u, int v)
       {
 
