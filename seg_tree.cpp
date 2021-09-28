@@ -40,6 +40,16 @@ ll query(int root, int high, int low, int left, int right)
     int middle = (high + low) / 2;
     return query(2 * root, middle, low, left, right) + query(2 * root + 1, high, middle + 1, left, right);
 }
+
+void update(int pos, ll value){
+    int i = pos+n;
+    seg_tree[i] = value;
+    i >>= 1;
+    while(i){
+        seg_tree[i] = min(seg_tree[2*i] , seg_tree[2*i + 1]);
+        i >>= 1;
+    }
+}
  
 void build()
 {
