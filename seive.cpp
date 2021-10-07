@@ -26,7 +26,8 @@ vector<bool> prime ;
  
 void seive(int n)
 {
- 
+    prime[0] = 0;
+    prime[1] = 0;
     for (int p = 2; p * p <= n; p++)
     {
         if (prime[p] == true)
