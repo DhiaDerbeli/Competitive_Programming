@@ -20,6 +20,10 @@ struct dsu
          return false;
       }
 
+         if (find(u) == find(v)) return true;
+         return false;
+      }
+
       void join(int u, int v){
          u = find(u);
          v = find(v);
