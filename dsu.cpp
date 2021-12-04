@@ -1,10 +1,10 @@
+vector<int> root, sz;
 struct dsu
    {
-      vector<int> root, size;
 
       dsu(int n)
       {
-         size.resize(n + 1, 1);
+         sz.resize(n + 1, 1);
          root.resize(n + 1);
          for (int i = 1; i <= n; i++) root[i] = i;
       }
@@ -24,8 +24,9 @@ struct dsu
       void join(int u, int v){
          u = find(u);
          v = find(v);
-         if (size[u] < size[v]) swap(u, v);
+         if (sz[u] < sz[v]) swap(u, v);
          root[v] = u;
-         size[u] += size[v];
+         sz[u] += sz[v];
       }
-   };
+ };
+// create an instance : dsu ds(n) 
