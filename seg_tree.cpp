@@ -56,11 +56,7 @@ void build()
 {
     a.resize(n);
     READ(a, n);
-    while (__builtin_popcount(n) != 1)
-    {
-        a.pb(0);
-        n++;
-    }
+    n = (1 << (32 - __builtin_clz(n)));
     seg_tree.resize(2 * n);
     for (int i = 0; i < n; i++)
         seg_tree[i + n] = a[i];
