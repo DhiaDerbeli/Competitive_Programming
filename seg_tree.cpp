@@ -45,10 +45,9 @@ ll query(int root, int high, int low, int left, int right)
 void update(int pos, ll value){
     int i = pos+n;
     seg_tree[i] = value;
-    i >>= 1;
     while(i){
-        seg_tree[i] = min(seg_tree[2*i] , seg_tree[2*i + 1]);
         i >>= 1;
+        seg_tree[i] = min(seg_tree[2*i] , seg_tree[2*i + 1]);
     }
 }
  
@@ -58,7 +57,7 @@ void build()
     READ(a, n);
     n = (1 << ((n&(n-1)) ? 32 : 31)- __builtin_clz(n));
     seg_tree.resize(2 * n);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < a.size(); i++)
         seg_tree[i + n] = a[i];
     for (int i = n - 1; i >= 0; i--)
         seg_tree[i] = seg_tree[i * 2] + seg_tree[i * 2 + 1];
