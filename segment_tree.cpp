@@ -32,3 +32,6 @@ void build()
     for (int i = n - 1; i >= 0; i--)
         seg_tree[i] = seg_tree[i * 2] + seg_tree[i * 2 + 1];
 }
+
+//query(l-1, r-1)
+//query(pos-1, val)
