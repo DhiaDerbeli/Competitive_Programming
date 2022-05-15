@@ -2,14 +2,14 @@ vll seg_tree;
 vll a;
 int n, q;
  
-ll query(int root, int high, int low, int left, int right)
+ll query(int left, int right, int root = 1, int high = n-1, int low = 0)
 {
     if (low > right || high < left)
         return 0;
     if (low >= left && high <= right)
         return seg_tree[root];
     int middle = (high + low) / 2;
-    return query(2 * root, middle, low, left, right) + query(2 * root + 1, high, middle + 1, left, right);
+    return min(query(left, right, 2 * root, middle, low), query(left, right, 2 * root + 1, high, middle + 1));
 }
 
 void update(int pos, ll value){
