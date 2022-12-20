@@ -1,3 +1,5 @@
+// fenwick tree
+
 const int N = 2e5 + 3;
 int fen[N];
 int n;

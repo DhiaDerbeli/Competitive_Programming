@@ -1,4 +1,6 @@
- typedef long long ll;
+// number theory
+
+typedef long long ll;
 const int N = 3e5 + 3;
 const ll MOD = 998244353;
 

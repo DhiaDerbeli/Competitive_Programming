@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
  
+// topological sort
+
 int n; // number of vertices
 vector<vector<int>> adj; // adjacency list of graph
 vector<bool> visited;
