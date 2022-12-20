@@ -3,14 +3,7 @@ using namespace std;
 typedef long long ll;
 
 const int N = 2e5 + 3;
-typedef tuple<ll, int> edge;
-
-vector<edge> g[N];
-bool visited[N];
-ll d[N];
-
-const int N = 2e5 + 3;
-typedef tuple<ll, int> edge;
+typedef pair<ll, int> edge;
 
 vector<edge> g[N];
 bool visited[N];
@@ -44,7 +37,7 @@ void test_case(){
             if(visited[nxt]) continue;
             if(d[nxt] > w + dist){
                 d[nxt] = w + dist;
-                q.push({d[nxt], w});
+                q.push({d[nxt], nxt});
             }
         }
     }
