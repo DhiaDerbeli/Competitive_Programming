@@ -1,3 +1,9 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+const int INF = 1e9;
+
 template<typename T>
 struct segment_tree {
     vector<T> seg_tree, a;
@@ -58,7 +64,7 @@ T Sum(T a, T b) {
 void test_case() {
     int n;
     cin >> n;
-    vi a(n);
+    vector<int> a(n);
     for(int i=0; i<n; i++) cin >> a[i];
     segment_tree<int> seg(a, n, INF, &Min<int>);
     seg.build();
